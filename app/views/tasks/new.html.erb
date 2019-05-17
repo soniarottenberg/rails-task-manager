@@ -1,0 +1,18 @@
+<div>
+  <h1>Add a task</h1>
+</div>
+
+<div>
+  <%= form_for(@task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div class="btn btn-primary mt-3"><a href="/tasks">Go Back</a></div>
+

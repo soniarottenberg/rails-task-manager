@@ -1,0 +1,24 @@
+<h1>This is my index</h1>
+
+<% @tasks.each do |task| %>
+<div>
+  <% if task.completed %>
+    <input checked type="checkbox" id="tasks" name="tasks">
+  <% else %>
+    <input type="checkbox" id="tasks" name="tasks">
+  <% end %>
+  <label for="tasks">
+    <a href="tasks/<%= task.id %>"><%= task.title %></a>
+    <%= link_to image_tag(), task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </label>
+</div>
+
+<% end %>
+
+<hr>
+
+<div>
+  <p><a href="/tasks/new"><i class="fas fa-plus"></i> Add a new task</a></p>
+</div>
